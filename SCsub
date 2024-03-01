@@ -1,5 +1,21 @@
 Import('env')
-
-env.add_source_files(env.modules_sources, "*.cpp")
+module_env = env.Clone()
+sources = [
+    "register_types.cpp",
+    "ultra_calc.cpp",
+    "ultra_calc/src/csv_support/csv_support.cpp",
+    "ultra_calc/src/exp_calc/function.cpp",
+    "ultra_calc/src/exp_calc/function_manager.cpp",
+    "ultra_calc/src/exp_calc/interpreter.cpp",
+    "ultra_calc/src/exp_calc/lexer.cpp",
+    "ultra_calc/src/exp_calc/node.cpp",
+    "ultra_calc/src/exp_calc/parser.cpp",
+    "ultra_calc/src/utils/utils.cpp",
+    "ultra_calc/src/workspace/cell.cpp",
+    "ultra_calc/src/workspace/table.cpp",
+    "ultra_calc/src/workspace/workspace.cpp"
+]
+module_env.add_source_files(env.modules_sources, sources)
+module_env.Append(CCFLAGS = ["-std=c++23"])
 
 

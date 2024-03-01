@@ -1,0 +1,3 @@
+[submodule "ultra_calc"]
+	path = ultra_calc
+	url = git@github.com:Skrzypinski009/ultra_calc.git
